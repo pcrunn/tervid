@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+# converts a video into images
+# and displays it on the terminal
+
+# get arguments
+video=$1
+
+
+# create the images directory
+mkdir .images
+
+# convert the video to images
+ffmpeg -i $video ./.images/video%04d.jpg
+
+# loop through all the images
+for image in $(ls ./.images); do
+    tiv ./.images/$image
+    sleep .0166666667
+    clear
+done
+
+# remove the images directory
+rm -rf ./.images
