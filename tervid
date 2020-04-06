@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # converts a video into images
 # and displays it on the terminal
