@@ -6,12 +6,14 @@
 # get arguments
 video=$1
 
-
 # create the images directory
 mkdir .images
 
 # convert the video to images
 ffmpeg -i $video ./.images/video%04d.jpg
+
+# start playing the audio
+mpv --no-video $video &
 
 # loop through all the images
 for image in $(ls ./.images); do
